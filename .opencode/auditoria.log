@@ -1,0 +1,4 @@
+2026-10-14 13:11:51 | PLUGIN cargado     | guardian.js está activo
+2026-10-14 13:16:07 | shell              | git remote -v
+2026-10-14 13:16:07 | shell              | git status --short --branch
+2026-10-14 13:16:07 | shell              | git log -1 --oneline
