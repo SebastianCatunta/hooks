@@ -1,0 +1,4 @@
+#!/bin/sh
+# Impide publicar cambios si las pruebas del proyecto fallan.
+cd "$(git rev-parse --show-toplevel)/proyecto-demo" || exit 1
+python -B -m unittest discover -s tests -v

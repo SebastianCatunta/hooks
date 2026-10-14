@@ -10,3 +10,15 @@
 2026-10-14 13:18:06 | glob               | .opencode/**
 2026-10-14 13:18:09 | read               | .opencode/plugins/guardian.js
 2026-10-14 13:18:18 | patch              | .github/workflows/tests.yml
+2026-10-14 13:18:26 | shell              | git add -- .github/workflows/tests.yml .opencode/auditoria.log && git commit -m "Documenta ejecución manual de pruebas y
+2026-10-14 13:19:36 | shell              | gh run list --limit 5
+2026-10-14 13:19:36 | shell              | git status --short --branch
+2026-10-14 13:19:36 | shell              | ls -la .opencode/plugins .git/hooks
+2026-10-14 13:19:36 | shell              | git ls-files .github .opencode proyecto-demo
+2026-10-14 13:19:43 | read               | proyecto-demo/notas.py
+2026-10-14 13:19:43 | read               | proyecto-demo/tests/test_notas.py
+2026-10-14 13:19:44 | shell              | python -B -m unittest discover -s tests -v
+2026-10-14 13:19:44 | webfetch           | 
+2026-10-14 13:19:59 | patch              | proyecto-demo/notas.py
+2026-10-14 13:20:01 | PRUEBAS            | OK
+2026-10-14 13:20:11 | shell              | chmod +x .githooks/pre-push && git config --local core.hooksPath .githooks && python -B -m unittest discover -s tests -v
