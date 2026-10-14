@@ -2,3 +2,11 @@
 2026-10-14 13:16:07 | shell              | git remote -v
 2026-10-14 13:16:07 | shell              | git status --short --branch
 2026-10-14 13:16:07 | shell              | git log -1 --oneline
+2026-10-14 13:16:40 | shell              | git add -- .github/workflows/tests.yml .opencode/auditoria.log && git commit -m "Actualiza workflow de pruebas y registr
+2026-10-14 13:17:58 | shell              | git status --short --branch
+2026-10-14 13:17:58 | read               | .github/workflows/tests.yml
+2026-10-14 13:17:58 | read               | .opencode/auditoria.log
+2026-10-14 13:17:59 | shell              | git config --get core.hooksPath; git config --get alias.commit; ls -la .git/hooks
+2026-10-14 13:18:06 | glob               | .opencode/**
+2026-10-14 13:18:09 | read               | .opencode/plugins/guardian.js
+2026-10-14 13:18:18 | patch              | .github/workflows/tests.yml

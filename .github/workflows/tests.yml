@@ -5,6 +5,7 @@ on:
   pull_request:
   workflow_dispatch:
 #quetal
+# Las pruebas también pueden lanzarse manualmente desde GitHub Actions.
 permissions:
   contents: read
 #hola
