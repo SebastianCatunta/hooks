@@ -23,4 +23,5 @@ jobs:
         with:
           python-version: '3.14'
       - name: Ejecutar pruebas
+        # El hook pre-push ejecuta estas mismas pruebas antes de enviar cambios.
         run: python -B -m unittest discover -s tests -v

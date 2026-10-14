@@ -22,3 +22,5 @@
 2026-10-14 13:19:59 | patch              | proyecto-demo/notas.py
 2026-10-14 13:20:01 | PRUEBAS            | OK
 2026-10-14 13:20:11 | shell              | chmod +x .githooks/pre-push && git config --local core.hooksPath .githooks && python -B -m unittest discover -s tests -v
+2026-10-14 13:20:24 | shell              | chmod +x .githooks/pre-push && git config --local core.hooksPath .githooks && git add -- proyecto-demo/notas.py .githook
+2026-10-14 13:21:58 | patch              | .github/workflows/tests.yml
