@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: read
-#para verificar hooks de github
+#para verificar hooks de github actualizar el repositorio
 jobs:
   perfil:
     runs-on: ubuntu-latest
