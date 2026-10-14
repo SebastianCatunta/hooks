@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: read
-#hola
+#para verificar hooks de github
 jobs:
   perfil:
     runs-on: ubuntu-latest
