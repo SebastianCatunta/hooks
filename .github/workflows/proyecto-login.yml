@@ -1,0 +1,31 @@
+name: Proyecto login
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  perfil:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: proyecto-login/frontend
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: proyecto-login/frontend/package-lock.json
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Comprobar tipos
+        run: npm run typecheck
+      - name: Ejecutar las cinco pruebas del perfil
+        run: npm test -- src/test/Profile.test.tsx

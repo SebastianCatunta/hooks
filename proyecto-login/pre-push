@@ -1,0 +1,8 @@
+#!/bin/sh
+# Instalar en .git/hooks/pre-push desde la raíz del repositorio (ver README).
+set -eu
+root=$(git rev-parse --show-toplevel)
+cd "$root/proyecto-login"
+echo 'Comprobando proyecto-login antes del push…'
+(cd frontend && npm run typecheck && npm test -- src/test/Profile.test.tsx && npm test)
+(cd backend && npm run build && npm test)

@@ -24,3 +24,39 @@
 2026-10-14 13:20:11 | shell              | chmod +x .githooks/pre-push && git config --local core.hooksPath .githooks && python -B -m unittest discover -s tests -v
 2026-10-14 13:20:24 | shell              | chmod +x .githooks/pre-push && git config --local core.hooksPath .githooks && git add -- proyecto-demo/notas.py .githook
 2026-10-14 13:21:58 | patch              | .github/workflows/tests.yml
+2026-10-14 13:22:07 | shell              | git status --short --branch && git config --get core.hooksPath && git add -- .github/workflows/tests.yml .opencode/audit
+2026-10-14 13:36:33 | skill              | 
+2026-10-14 13:36:38 | glob               | **/AGENTS.md
+2026-10-14 13:36:38 | shell              | git status --short
+2026-10-14 13:36:39 | glob               | proyecto-login/**
+2026-10-14 13:36:46 | read               | proyecto-login/frontend/src/App.tsx
+2026-10-14 13:36:46 | read               | proyecto-login/frontend/src/components/Dashboard.tsx
+2026-10-14 13:36:46 | read               | proyecto-login/frontend/src/styles.css
+2026-10-14 13:36:46 | read               | proyecto-login/README.md
+2026-10-14 13:36:46 | read               | proyecto-login/frontend/src/test/App.test.tsx
+2026-10-14 13:36:46 | shell              | find proyecto-login -maxdepth 3 -type f -not -path '*/node_modules/*' -not -path '*/dist/*' | head -80
+2026-10-14 13:36:53 | read               | proyecto-login/frontend/src/session.tsx
+2026-10-14 13:36:53 | read               | proyecto-login/.opencode/plugins/guardian.js
+2026-10-14 13:36:53 | read               | proyecto-login/frontend/package.json
+2026-10-14 13:36:54 | shell              | ls -la .git/hooks
+2026-10-14 13:37:02 | read               | proyecto-login/frontend/src/api.ts
+2026-10-14 13:37:28 | patch              | proyecto-login/frontend/src/test/Profile.test.tsx
+2026-10-14 13:38:19 | shell              | npm test -- --run src/test/Profile.test.tsx
+2026-10-14 13:38:57 | patch              | proyecto-login/frontend/src/components/Profile.tsx
+2026-10-14 13:39:27 | patch              | proyecto-login/frontend/src/components/Profile.tsx
+2026-10-14 13:39:43 | patch              | proyecto-login/frontend/src/test/Profile.test.tsx
+2026-10-14 13:40:10 | patch              | proyecto-login/pre-push
+2026-10-14 13:40:25 | shell              | npm test
+2026-10-14 13:40:29 | shell              | npm run build
+2026-10-14 13:40:46 | shell              | npm run build && npm test
+2026-10-14 13:40:55 | patch              | proyecto-login/frontend/src/components/Profile.tsx
+2026-10-14 13:41:06 | shell              | npm test
+2026-10-14 13:46:14 | read               | proyecto-login/pre-push
+2026-10-14 13:46:14 | read               | proyecto-login/frontend/package.json
+2026-10-14 13:46:14 | read               | proyecto-login/frontend/src/test/Profile.test.tsx
+2026-10-14 13:46:14 | glob               | .github/workflows/*
+2026-10-14 13:46:14 | shell              | git status --short
+2026-10-14 13:46:18 | read               | .github/workflows/tests.yml
+2026-10-14 13:46:36 | patch              | proyecto-login/frontend/src/test/Profile.test.tsx
+2026-10-14 13:46:56 | patch              | proyecto-login/README.md
+2026-10-14 13:47:05 | shell              | npm test -- src/test/Profile.test.tsx
