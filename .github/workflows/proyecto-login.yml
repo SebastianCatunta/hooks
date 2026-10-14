@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: read
-#para verificar hooks de github actualizar el repositorio
+#para verificar hooks de este proyecto, se ejecutan las pruebas de perfil y login
 jobs:
   perfil:
     runs-on: ubuntu-latest

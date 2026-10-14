@@ -1,5 +1,5 @@
 #!/bin/sh
-# Instalar en .git/hooks/pre-push desde la raíz del repositorio (ver README).
+# Ejecutado por el hook activo .githooks/pre-push (ver README).
 set -eu
 root=$(git rev-parse --show-toplevel)
 cd "$root/proyecto-login"

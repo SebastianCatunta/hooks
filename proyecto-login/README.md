@@ -4,18 +4,9 @@
 
 La vista autenticada ofrece **Mi perfil** (nombre y correo de la sesión, solo lectura), regreso al inicio y cierre de sesión. No se exponen contraseñas ni se añade una API nueva.
 
-Hay cinco pruebas nuevas en `frontend/src/test/Profile.test.tsx`. **Temporalmente una falla a propósito**: exige un correo distinto del que devuelve la sesión, para comprobar que tanto el hook como GitHub Actions detectan el fallo. Tras comprobarlo, sustituir `correo-pendiente@example.com` por `demo@example.com` y volver a ejecutar las pruebas. No modificar el correo real ni omitir la prueba.
+Las cinco pruebas de `frontend/src/test/Profile.test.tsx` comprueban acceso, datos, regreso, cierre de sesión y privacidad. Se verificó que el hook rechazaba el correo incorrecto de una prueba temporal; la expectativa ya está corregida.
 
-Desde la **raíz del repositorio Git**, instalar el hook versionado solo si no existe ya otro `pre-push` (si existe, integrar sus comandos manualmente para no sobrescribirlo):
-
-```bash
-cp proyecto-login/pre-push .git/hooks/pre-push
-chmod +x .git/hooks/pre-push
-```
-
-En Windows con Git Bash sirven los mismos comandos. El hook ejecuta `typecheck`, **las cinco pruebas del perfil**, la suite completa del frontend y compilación y pruebas del backend; cualquier fallo cancela el push. Requiere dependencias instaladas con `npm ci` en ambas carpetas. Los hooks de Git son locales y deben instalarse en cada clon.
-
-**Para observar el fallo en GitHub Actions debes lograr que el push llegue a GitHub.** Si instalas el hook anterior, el push se detendrá localmente y Actions no se iniciará. Para esta comprobación, no instales aún el hook local o desactívalo solo para ese push con `git -c core.hooksPath=/dev/null push` desde Git Bash. El workflow `.github/workflows/proyecto-login.yml` se ejecutará en GitHub al recibir el push y fallará en la prueba del correo. Después, restaura el uso normal del hook (la opción `-c` solo afecta a ese comando) y corrige la expectativa temporal. Asegúrate de incluir tanto este workflow como `proyecto-login/` en el commit; GitHub Actions no ve archivos sin confirmar.
+Git usa `.githooks/pre-push` mediante `core.hooksPath`. Este conserva las pruebas de `proyecto-demo` y llama a `proyecto-login/pre-push`, que ejecuta `typecheck`, **las cinco pruebas del perfil**, la suite completa del frontend, compilación y pruebas del backend. Cualquier fallo impide el push. Las dependencias deben instalarse con `npm ci` en cada carpeta. Si se clona el repositorio en otra máquina, activar los hooks con `git config core.hooksPath .githooks`. GitHub Actions ejecuta las cinco pruebas de perfil independientemente del hook local mediante `.github/workflows/proyecto-login.yml`.
 
 Aplicación de inicio de sesión en español con React 19, Vite 7, TypeScript 5, Express 5 y PostgreSQL 16. Incluye login, restauración de sesión, recurso protegido y logout; **no hay registro público**, recuperación de contraseña ni roles. El contrato técnico está en `docs/login-contract.md`.
 

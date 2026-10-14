@@ -23,13 +23,11 @@ describe('perfil de usuario', () => {
     expect(screen.getByRole('heading', { name: 'Mi perfil' })).toBeInTheDocument();
   });
 
-  it('muestra nombre y correo de la sesión sin solicitar otros datos (fallo temporal para probar CI)', async () => {
+  it('muestra nombre y correo de la sesión sin solicitar otros datos', async () => {
     const fetchMock = mountAuthenticated();
     await userEvent.click(await screen.findByRole('button', { name: 'Mi perfil' }));
     expect(screen.getAllByText('Usuario Demo')).toHaveLength(2);
-    // FALLO INTENCIONAL TEMPORAL: retirar esta expectativa incorrecta tras verificar GitHub Actions.
-    // El correo real de la sesión es demo@example.com.
-    expect(screen.getByText('correo-pendiente@example.com')).toBeInTheDocument();
+    expect(screen.getByText('demo@example.com')).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
